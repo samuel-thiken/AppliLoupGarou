@@ -1,0 +1,43 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node server.ts",
+    "build-test": "rm db.sqlite && ts-node server.ts",
+    "test": "ts-node tests/main.test.ts",
+    "fix": "yarn install && rm -f db.sqlite"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/better-sqlite3": "^7.6.3",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/node": "^18.15.5",
+    "@types/require-dir": "^1.0.2",
+    "@types/supertest": "^2.0.12",
+    "@types/ws": "^8.5.4",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "cookie-parser": "^1.4.6",
+    "eslint": "^8.35.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "better-sqlite3": "^8.2.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "kysely": "^0.23.5",
+    "moment": "^2.29.4",
+    "require-dir": "^1.2.0",
+    "supertest": "^6.3.3",
+    "ws": "^8.13.0"
+  }
+}

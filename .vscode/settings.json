@@ -1,0 +1,33 @@
+{
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "files.exclude": {
+        "**/.*rc": true,
+        "**/*config.*": true,
+        "**/*.lock": true
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "NOTSURE",
+        "FIXME",
+        "TODO",
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "BUG": {
+            "icon": "bug",
+            "background": "#c81515",
+            "foreground": "#fff"
+        },
+        "NOTSURE": {
+            "icon": "question",
+            "background": "#238ff4",
+            "foreground": "#fff"
+        },
+        "FIXME": {
+            "icon": "flame",
+            "background": "#d38200",
+            "foreground": "#000"
+        }
+    },
+    "cSpell.language": "fr,fr-FR"
+}

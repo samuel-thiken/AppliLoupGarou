@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="RkCLneAruCv4ALjau-6N" name="Page-1">
+        <mxGraphModel dx="1133" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;endArrow=none;endFill=0;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;endArrow=none;endFill=0;startArrow=blockThin;startFill=1;endSize=6;startSize=10;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="register event&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="6" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2143" y="4" relative="1" as="geometry">
+                        <mxPoint x="-64" y="13" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="EventManager" style="fontStyle=0;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="260" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Gère les requêtes des websockets et les écouteurs d'évènements" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=11;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="285" y="130" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;startArrow=blockThin;startFill=1;endArrow=none;endFill=0;startSize=10;endSize=6;" parent="1" source="5" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="dispatch event&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="9" vertex="1" connectable="0">
+                    <mxGeometry x="0.4467" y="-3" relative="1" as="geometry">
+                        <mxPoint x="57" y="57" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="chatController" style="whiteSpace=wrap;html=1;fillColor=default;fontStyle=0;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="460" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="send event&lt;br&gt;&quot;CHAT_RECEIVED&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="435" y="380" as="geometry">
+                        <mxPoint x="9" y="-3" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="Le comportement de ce contrôleur est identique aux autres (voteController, powerController, etc)" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=11;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="285" y="560" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;exitPerimeter=0;" parent="1" source="21" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="370" y="270" as="sourcePoint"/>
+                        <mxPoint x="370" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

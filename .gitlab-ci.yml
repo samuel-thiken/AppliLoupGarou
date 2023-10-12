@@ -1,0 +1,121 @@
+stages:          # List of stages for jobs, and their order of execution
+  - test
+  - lint
+  - cypress
+  - drawio
+  - deploy
+
+#Eslint nous permet de vérifier que le codé envoyé est correcte syntaxiquement
+eslint:
+  stage: lint
+  image: node
+  script:
+    # Install eslint
+    - npm install eslint
+    - yarn add typescript
+    - yarn add --dev @gitlab/eslint-plugin @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jsx-a11y
+    # Run eslint
+    - node_modules/eslint/bin/eslint.js ./client/
+    - node_modules/eslint/bin/eslint.js ./server/
+
+# Cypress -> test E2E
+cypress:
+  stage: test
+  image: cypress/browsers:latest
+  script:
+    - cd server/
+    - yarn install --frozen-lockfile
+    - npm install -g ts-node
+    - yarn start &  #On lance le serveur
+    - sleep 10
+    - cd ..
+    - cd client/
+    - yarn install --frozen-lockfile
+    - npm install -g ts-node
+    - yarn add cypress
+    - yarn web & #On lance le client
+    - sleep 80
+    - ./node_modules/.bin/cypress run --browser chrome #On lance le cypress
+
+
+test_unit_backend:
+  stage: test
+  image: node:latest
+  script:
+    - cd server/
+    - yarn install 
+    - npm install -g ts-node
+    - yarn start &
+    - sleep 20
+    - yarn test
+    # - if [ $(yarn test | grep "Total :" |  cut -c 14-100") != $(yarn test | grep "Succeed :" |  cut -c 16-100)  ]; then
+    # - exit 1
+    # - else echo "ALL OK"
+    # - fi;   
+
+
+#Ce job est lancé automatiquement avec un cron Gitlab
+# Ce job génère toutes les images (svg et png) des diagrammes .drawio
+#Puis fait un commit pour les ajouter au projet
+drawio:on-schedule:
+  stage: drawio
+  image: "docker-registry.univ-nantes.fr/bousse-e/docker-drawio"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  script:
+      #configuration de git
+    - git checkout main
+    - git pull
+    - git config user.name "CI Runner DrawIO"
+    - git config user.email "ci_runner@nothing.org"
+    # création des dossiers de sortie
+    - mkdir -p documentation/client/out
+    - mkdir -p documentation/server/out
+    - mkdir -p documentation/global/out
+    # Suppression des rendus existants
+    - rm documentation/client/out/*.png
+    - rm documentation/client/out/*.svg
+    - rm documentation/server/out/*.png
+    - rm documentation/server/out/*.svg
+    - rm documentation/global/out/*.png
+    - rm documentation/global/out/*.svg
+    # Génération des images (SVG) avec drawio
+    - drawio --export -f svg --crop --output documentation/client/out documentation/client/
+    - drawio --export -f svg --crop --output documentation/server/out documentation/server/
+    - drawio --export -f svg --crop --output documentation/global/out documentation/global/
+    # Génération des images (PNG) avec drawio
+    - drawio --export -f png --crop --output documentation/client/out documentation/client/
+    - drawio --export -f png --crop --output documentation/server/out documentation/server/
+    - drawio --export -f png --crop --output documentation/global/out documentation/global/
+    # On ajoute les images et commit/push
+    - git add documentation/client/out/*
+    - git add documentation/server/out/*
+    - git add documentation/global/out/*
+    # Push si nécessaire
+    - if [ $(git status | grep "nothing to commit" | wc -l) == "0" ]; then
+    - git commit -m "[skip ci] DrawIO rendering"
+    - git push https://cirunner:${HTTP_GIT_TOKEN}@gitlab.com/grenoble-inp-ensimag/4MMCAW6/G2/ProjetACOLWEB/ProjetACOLWEB_bruno_carrere_damien_gieules_dorian_voland_guilherme_faccin_huth_samuel_thiken.git 
+    - else echo "No changes, ignoring commit"
+    - fi;
+  when: always
+
+
+
+# Ce job génére les badges
+badges:
+  stage: deploy
+  script:
+    - apt-get update #on doit récupérer les paquets
+    - apt-get install python3 -y #on installe python en disant bien "yes" lorsqu'on aura la question (-y)
+    - python3 -V #Check the version of Python
+    - apt-get install python3-pip -y #on installe pip3 qui va nous servir à installer anybadge
+    - pip3 install anybadge #on installe anybadge
+    - python3 ScriptGitlabCi/genereBadges.py # Script de génération des badges
+  dependencies:         # Les badges sont générés à partir des rapports s'ils sont disponibles
+    #NONE
+  artifacts:
+    paths:
+        # Ces fichiers sont générés par le script genereBadges.sh
+      - drawio.svg    # et mis à disposition pour mise en évidence sur la page du dépôt
+  when: always          # Et quoiqu'il arrive la génération des badges devra se faire.
+                        # Le script de génération de badge doit tenir compte du fait de disposer ou non des rapports 

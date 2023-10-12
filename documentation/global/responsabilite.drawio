@@ -1,0 +1,40 @@
+<mxfile host="65bd71144e">
+    <diagram id="eUK-GeXvjoCjAl6yjJUx" name="Page-1">
+        <mxGraphModel dx="1133" dy="633" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Backend (serveur)" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=30;boundedLbl=1;verticalAlign=middle;align=left;spacingLeft=5;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="140" width="380" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Gérer les utilisateurs et&#10;les parties" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="270" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Stocker les informations &#10;des parties" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="190" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Gérer le déroulement &#10;des parties" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="350" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Appliquer les &#10;changements découlant &#10;des actions des &#10;joueurs" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="430" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Envoyer les informations&#10;des parties aux joueurs" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="190" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Frontend (client)" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=30;boundedLbl=1;verticalAlign=middle;align=left;spacingLeft=5;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="140" width="340" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Afficher les informations&#10;du serveur" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="190" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Permettre à &#10;l'utilisateur d'interagir &#10;avec le système" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="270" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Envoyer les actions&#10;de l'utilisateur au&#10;serveur" style="ellipse;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="350" width="140" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

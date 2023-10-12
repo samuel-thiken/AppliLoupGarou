@@ -1,0 +1,114 @@
+<mxfile host="65bd71144e">
+    <diagram id="m3BkpVxazEsqME0DdXml" name="Page-1">
+        <mxGraphModel dx="2593" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="34" value="EventManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="-545" y="30" width="130" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="34" vertex="1">
+                    <mxGeometry x="60" y="80" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="34" vertex="1">
+                    <mxGeometry x="60" y="150" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="websocketController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="-755" y="30" width="130" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="39" vertex="1">
+                    <mxGeometry x="60" y="120" width="10" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="39" vertex="1">
+                    <mxGeometry x="60" y="260" width="10" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="chatController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="-335" y="30" width="130" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="44" vertex="1">
+                    <mxGeometry x="60" y="80" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="44" vertex="1">
+                    <mxGeometry x="60" y="220" width="10" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;" parent="1" target="39" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-830" y="160" as="sourcePoint"/>
+                        <mxPoint x="-705" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="websocket message event&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="47" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="16" y="-21" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;exitX=0.933;exitY=0.29;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="40" target="34" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-680" y="180" as="sourcePoint"/>
+                        <mxPoint x="-524" y="169.5999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="get event handlers for event&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="52" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="38" y="-19" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;exitX=0.133;exitY=0.206;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="45" target="34" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-268.6700000000001" y="110.19000000000005" as="sourcePoint"/>
+                        <mxPoint x="-480" y="116" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="register event&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="49" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-40" y="-18" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;exitX=-0.067;exitY=0.83;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="51" target="39" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-680" y="270.0000000000002" as="sourcePoint"/>
+                        <mxPoint x="-476.83" y="270.0000000000002" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="get event handlers for event&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="54" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="38" y="-19" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;exitX=1;exitY=0.913;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="40" target="44" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-650" y="290" as="sourcePoint"/>
+                        <mxPoint x="-444.83" y="290" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="call event handler&lt;br&gt;&quot;CHAT_SENT&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="57" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="191" y="-19" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;exitX=0.5;exitY=0.833;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="56" target="39" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-278.3400000000001" y="300" as="sourcePoint"/>
+                        <mxPoint x="-485.0033333333335" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="60" value="send event&lt;br&gt;&quot;CHAT_RECEIVED&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="59" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-204" y="-19" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="62" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;exitX=0;exitY=0.883;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="61" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-830" y="220" as="sourcePoint"/>
+                        <mxPoint x="-830" y="334" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" value="websocket message event&lt;br&gt;&quot;CHAT_RECEIVED&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="62" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4496" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-37" y="-23" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
